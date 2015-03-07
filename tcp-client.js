@@ -161,7 +161,7 @@ function($log)
     chrome.sockets.tcp.onReceiveError.addListener(this._onReceiveError);
 
     if (this.callbacks.connect) {
-      console.log('connect complete');
+      log('connect complete');
       this.callbacks.connect();
     }
     log('onConnectComplete');
@@ -259,14 +259,14 @@ function($log)
    * Wrapper function for logging
    */
   function log(msg) {
-    console.log(msg);
+    $log.log(msg);
   }
 
   /**
    * Wrapper function for error logging
    */
   function error(msg) {
-    console.error(msg);
+    $log.error(msg);
   }
 
 
