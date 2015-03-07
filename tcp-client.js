@@ -86,6 +86,20 @@ function($log)
   };
 
   /**
+   * Sends a raw array buffer down the wire to the remote side
+   *
+   * @see http://developer.chrome.com/apps/sockets_tcp.html#method-send
+   * @param {ArrayBuffer} msg The message to send
+   * @param {Function} callback The function to call when the message has sent
+   */
+  TcpClient.prototype.sendArrayBuffer = function(arrayBuffer, callback)
+  {
+    // Register sent callback.
+    this.callbacks.sent = callback;
+    chrome.sockets.tcp.send(this.socketId, arrayBuffer, this._onSendComplete.bind(this));
+  };
+
+  /**
    * Sets the callback for when a message is received
    *
    * @param {Function} callback The function to call when a message has arrived
