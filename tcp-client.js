@@ -24,7 +24,8 @@ Author: Boris Smus (smus@chromium.org)
  * @ngdoc service
  * @name tcpClientService
  */
-angular.module("angular-chrome-app-tcp-client")
+
+angular.module("angular-chrome-app-tcp-client", [])
 .service("tcpClientService",
 ["$log",
 function($log)
