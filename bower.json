@@ -1,0 +1,24 @@
+{
+  "name": "angular-chrome-app-tcp-client",
+  "version": "0.0.1",
+  "homepage": "https://github.com/PortChaw/angular-chrome-app-tcp-client",
+  "authors": [
+    "chirgwin <geoff@portchaw.com>"
+  ],
+  "description": "chrome.sockets.tcp client wrapped as an AngularJS service. Originally from https://raw.githubusercontent.com/GoogleChrome/chrome-app-samples/master/samples/telnet/tcp-client.js",
+  "main": "tcp-client.js",
+  "keywords": [
+    "angular",
+    "chrome",
+    "tcp",
+    "sockets"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
