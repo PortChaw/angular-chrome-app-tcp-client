@@ -16,8 +16,19 @@ limitations under the License.
 Author: Boris Smus (smus@chromium.org)
 */
 
-(function(exports) {
+(function(){
 
+"use strict";
+
+/**
+ * @ngdoc service
+ * @name tcpClientService
+ */
+angular.module("angular-chrome-app-tcp-client")
+.service("tcpClientService",
+["$log",
+function($log)
+{
   /**
    * Creates an instance of the client
    *
@@ -244,6 +255,20 @@ Author: Boris Smus (smus@chromium.org)
     console.error(msg);
   }
 
-  exports.TcpClient = TcpClient;
 
-})(window);
+  //constructor for a service instance object
+  return {
+    /**
+     * instantiates tcp service, initializes the client
+     *
+     * @param {String} host The remote host to connect to
+     * @param {Number} port The port to connect to at the remote host
+     */
+    getInstance: function (host, port)
+    {
+      return new TcpClient(host, port);
+    }
+  };
+}
+]);
+})();
